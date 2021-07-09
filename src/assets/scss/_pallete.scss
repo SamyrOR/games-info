@@ -1,0 +1,76 @@
+@use '~@angular/material' as mat;
+$black-87-opacity: rgba(black, 0.87);
+$my-primary: (
+  50: #e9f2e1,
+  100: #c8ddb3,
+  200: #a4c780,
+  300: #7fb14d,
+  400: #63a027,
+  500: #488f01,
+  600: #418701,
+  700: #387c01,
+  800: #307201,
+  900: #216000,
+  A100: #acff90,
+  A200: #86ff5d,
+  A400: #60ff2a,
+  A700: #4cff11,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  ),
+);
+
+$my-accent: (
+  50: #fdf4e2,
+  100: #fbe3b6,
+  200: #f9d085,
+  300: #f6bd54,
+  400: #f4af2f,
+  500: #f2a10a,
+  600: #f09909,
+  700: #ee8f07,
+  800: #ec8505,
+  900: #e87403,
+  A100: #ffffff,
+  A200: #ffecdc,
+  A400: #ffcfa9,
+  A700: #ffc190,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: #ffffff,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$games-info-primary: mat.define-palette($my-primary);
+$games-info-accent: mat.define-palette($my-accent);
+
+// The warn palette is optional (defaults to red).
+$games-info-warn: mat.define-palette(mat.$red-palette);

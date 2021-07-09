@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@import "variables";
+@import "scaffolding";
+
+$games-info-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $games-info-primary,
+      accent: $games-info-accent,
+      warn: $games-info-warn,
+    ),
+  )
+);
