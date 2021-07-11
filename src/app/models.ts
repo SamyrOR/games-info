@@ -1,14 +1,15 @@
 export interface Game {
+  id: number;
   background_image: string;
   name: string;
   released: string;
   metacritic_url: string;
   website: string;
   description: string;
-  metacritic: string;
+  metacritic: number;
   genres: Array<Genre>;
   parent_platforms: Array<ParentPlatforms>;
-  publishersL: Array<Publishers>;
+  publishers: Array<Publishers>;
   ratings: Array<Rating>;
   screenshots: Array<Screenshots>;
   trailers: Array<Trailer>;
@@ -23,7 +24,7 @@ interface Genre {
 }
 
 interface ParentPlatforms {
-  platform: { name: string };
+  platform: { slug: string; name: string };
 }
 
 interface Publishers {

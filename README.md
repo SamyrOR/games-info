@@ -1,6 +1,25 @@
 # GamesInfo
 
+**Project to practice angular skills, consuming a public api of video games data.**
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+
+## Improved skills
+
+- Creating Components
+- HTTP calls
+- HTTP Interceptors
+- Services
+- Routes
+- Data With Routes
+- Unit testing
+
+## Personal implementations practiced
+
+- Custom Material theme
+- Unit tests
+- Load spinner
+- Some styles refactored
 
 ## Development server
 

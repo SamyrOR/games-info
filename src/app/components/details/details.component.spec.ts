@@ -1,20 +1,23 @@
-import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { from, Observer } from 'rxjs';
-import { Observable } from 'rxjs';
+import { Observable, Observer, from } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import { Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
 
-import { HomeComponent } from './home.component';
+import { DetailsComponent } from './details.component';
 
+let id = 355;
+
+class ActivatedRouteStub {
+  params = createResponse(355);
+}
 const games: Game[] = [
   {
     id: 355,
     background_image: 'path',
     name: 'Super Mario World',
-    released: '13/09/2014',
+    released: '2013-09-17',
     metacritic_url: 'metacritic_url',
     website: 'supermarioworld.com',
     description: 'Some Description',
@@ -56,7 +59,7 @@ const games: Game[] = [
     id: 356,
     background_image: 'path',
     name: 'Super Mario World',
-    released: '13/09/2014',
+    released: '2013-09-17',
     metacritic_url: 'metacritic_url',
     website: 'supermarioworld.com',
     description: 'Some Description',
@@ -98,7 +101,7 @@ const games: Game[] = [
     id: 357,
     background_image: 'path',
     name: 'Super Mario World',
-    released: '13/09/2014',
+    released: '2013-09-17',
     metacritic_url: 'metacritic_url',
     website: 'supermarioworld.com',
     description: 'Some Description',
@@ -153,22 +156,28 @@ class serviceMock {
   }
 }
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
-  let mockRouter = {
-    navigate: jasmine.createSpy('navigate'),
-  };
+describe('DetailsComponent', () => {
+  let component: DetailsComponent;
+  let fixture: ComponentFixture<DetailsComponent>;
+  let service: HttpService;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule, AppModule],
-      declarations: [HomeComponent],
+      imports: [AppModule],
+      providers: [
+        { provide: HttpService, useClass: serviceMock },
+        {
+          provide: ActivatedRoute,
+          useValue: { params: from([{ id: 355 }]) },
+        },
+      ],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(DetailsComponent);
     component = fixture.componentInstance;
+    service = TestBed.inject(HttpService);
     fixture.detectChanges();
   });
 

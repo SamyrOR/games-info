@@ -1,3 +1,7 @@
 @import "./pallete";
 $primary: map-get($my-primary, (500));
-$secondary: map-get($my-accent, 700);
+$primary-dark: map-get($my-primary, (700));
+$primary-light: map-get($my-primary, (300));
+$secondary: map-get($my-accent, 500);
+$secondary-dark: map-get($my-accent, 700);
+$secondary-light: map-get($my-accent, 300);
